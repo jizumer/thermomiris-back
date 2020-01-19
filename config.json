@@ -1,0 +1,7 @@
+{
+  "port": 4000,
+  "google.service.account.key": "path_to_google_service_account.json",
+  "google.database.url": "url_to_firebase_database",
+  "stock.updater.url.coinbase.btc.eur": "url_to_coinbase_api",
+  "stock.update.cronexpression": "*/5 * * * *"
+}

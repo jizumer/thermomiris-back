@@ -1,0 +1,25 @@
+{
+  "name": "thermomiris-back",
+  "version": "1.0.0",
+  "description": "ThermomIris backend. NodeJS lightweight task scheduler integrated with Firebase.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jizumer/thermomiris-back.git#readme"
+  },
+  "author": "@jizumer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jizumer/thermomiris-back/issues"
+  },
+  "homepage": "https://github.com/jizumer/thermomiris-back/tree/readme#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "firebase-admin": "^8.9.1",
+    "node-cron": "^2.0.3",
+    "request": "^2.88.0"
+  }
+}
