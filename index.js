@@ -14,7 +14,7 @@ cron.schedule(schedule, function() {
     console.log("Saving record:" + JSON.stringify(newValue));
     firebaseConnector.saveIntoCloudStore(
       "stocks",
-      utils.formatCustomDate("BTC" + new Date()),
+      "BTC" + utils.formatCustomDate(new Date()),
       {
         date: new Date(),
         USDTOEUR: newValue.BTC
