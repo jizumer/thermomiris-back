@@ -11,10 +11,14 @@ let schedule = gConfig.gConfigParamByName("stock.update.cronexpression");
 cron.schedule(schedule, function() {
   stockUpdater.bitcoinToEurSell(newValue => {
     //firebaseConnector.sendTopicNotification(newValue);
+    console.log("Saving record:" + JSON.stringify(newValue));
     firebaseConnector.saveIntoCloudStore(
       "stocks",
-      utils.formatCustomDate(new Date()) + "BTC",
-      newValue.result
+      utils.formatCustomDate("BTC" + new Date()),
+      {
+        date: new Date(),
+        USDTOEUR: newValue.BTC
+      }
     );
   });
 });
