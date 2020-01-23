@@ -45,11 +45,20 @@ function sendTopicNotification(msgToSend) {
     });
 }
 
-function saveIntoCloudStore(collectionName, documentName, document) {
+function saveIntoCloudStore(collectionName, document) {
   let db = firebaseAdmin.firestore();
-  let docRef = db.collection(collectionName).doc(documentName);
+  let docRef = db.collection(collectionName).doc(document.timestamp);
+  console.log("Saving data: " + JSON.stringify(document));
 
-  docRef.set(documentName);
+  docRef
+    .set({
+      timestamp: document.timestamp,
+      base: document.base,
+      amount: document.amount
+    })
+    .catch(err => {
+      console.log("Error adding data", err);
+    });
 }
 
 exports.initializeApp = initializeApp;

@@ -1,7 +1,7 @@
 {
   "port": 4000,
-  "google.service.account.key": "path_to_google_service_account.json",
-  "google.database.url": "url_to_firebase_database",
-  "stock.updater.url.coinbase.btc.eur": "url_to_coinbase_api",
+  "google.service.account.key": "C:/Users/sun_i/google-thiremomiris-service-account.json",
+  "google.database.url": "https://skilled-keyword-183711.firebaseio.com",
+  "stock.updater.url.coinbase.btc.eur": "https://api.coinbase.com/v2/prices/BTC-EUR/sell",
   "stock.update.cronexpression": "*/5 * * * *"
 }
