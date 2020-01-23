@@ -1,5 +1,20 @@
 const firebaseAdmin = require("firebase-admin");
 const utils = require("./utils");
+
+function initializeApp() {
+  let googleServiceConfigLocation = gConfig.gConfigParamByName(
+    "google.service.account.key"
+  );
+
+  let googleServiceConfig = require(googleServiceConfigLocation);
+  let googleDatabaseUrl = gConfig.gConfigParamByName("google.database.url");
+
+  firebaseAdmin.initializeApp({
+    credential: firebaseAdmin.credential.cert(googleServiceConfig),
+    databaseURL: googleDatabaseUrl
+  });
+}
+
 function sendTopicNotification(msgToSend) {
   var message = {
     notification: {
@@ -29,4 +44,13 @@ function sendTopicNotification(msgToSend) {
     });
 }
 
+function saveIntoCloudStore(collectionName, documentName, document) {
+  let db = firebaseAdmin.firestore();
+  let docRef = db.collection(collectionName).doc(documentName);
+
+  docRef.set(documentName);
+}
+
+exports.initializeApp = initializeApp;
 exports.sendTopicNotification = sendTopicNotification;
+exports.saveIntoCloudStore = saveIntoCloudStore;
