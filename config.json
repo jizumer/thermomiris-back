@@ -1,7 +1,13 @@
 {
   "port": 4000,
-  "google.service.account.key": "C:/Users/sun_i/google-thiremomiris-service-account.json",
-  "google.database.url": "https://skilled-keyword-183711.firebaseio.com",
-  "stock.updater.url.coinbase.btc.eur": "https://api.coinbase.com/v2/prices/BTC-EUR/sell",
-  "stock.update.cronexpression": "*/5 * * * *"
+  "google.service.account.key": "",
+  "google.database.url": "",
+  "stock.updater.url.coinbase.btc.eur": "",
+  "stock.update.cronexpression": "*/1 * * * *",
+  "ip.update.cronexpression": "*/1 * * * *",
+  "ip.updater.url.noip":  "",
+  "ip.updater.username.noip": "",
+  "ip.updater.passwd.noip": "",
+  "ip.updater.hostname.noip": "",
+  "ip.updater.useragent.noip": ""
 }
